@@ -1,0 +1,322 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9A260532151CCEEB0097623B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A260531151CCEEB0097623B /* Foundation.framework */; };
+		9A26055B151CD0540097623B /* Utility.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A26055A151CD0540097623B /* Utility.h */; };
+		9A26055D151CD6C20097623B /* MutexPosix.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A26055C151CD6C20097623B /* MutexPosix.h */; };
+		9A26055F151CD91D0097623B /* RWLockPosix.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A26055E151CD91D0097623B /* RWLockPosix.h */; };
+		9AD1E248151CDC4C00C0A6F3 /* Event.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD1E235151CDC4C00C0A6F3 /* Event.h */; };
+		9AD1E249151CDC4C00C0A6F3 /* EventPosix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AD1E236151CDC4C00C0A6F3 /* EventPosix.cpp */; };
+		9AD1E24A151CDC4C00C0A6F3 /* EventPosix.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD1E237151CDC4C00C0A6F3 /* EventPosix.h */; };
+		9AD1E24B151CDC4C00C0A6F3 /* Mutex.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD1E238151CDC4C00C0A6F3 /* Mutex.h */; };
+		9AD1E24C151CDC4C00C0A6F3 /* MutexPosix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AD1E239151CDC4C00C0A6F3 /* MutexPosix.cpp */; };
+		9AD1E24D151CDC4C00C0A6F3 /* MutexPosix.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD1E23A151CDC4C00C0A6F3 /* MutexPosix.h */; };
+		9AD1E24E151CDC4C00C0A6F3 /* Noncopyable.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD1E23B151CDC4C00C0A6F3 /* Noncopyable.h */; };
+		9AD1E24F151CDC4C00C0A6F3 /* RWLock.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD1E23C151CDC4C00C0A6F3 /* RWLock.h */; };
+		9AD1E250151CDC4C00C0A6F3 /* RWLockPosix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AD1E23D151CDC4C00C0A6F3 /* RWLockPosix.cpp */; };
+		9AD1E251151CDC4C00C0A6F3 /* RWLockPosix.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD1E23E151CDC4C00C0A6F3 /* RWLockPosix.h */; };
+		9AD1E253151CDC4C00C0A6F3 /* Semaphore.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD1E240151CDC4C00C0A6F3 /* Semaphore.h */; };
+		9AD1E255151CDC4C00C0A6F3 /* SpinLock.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD1E242151CDC4C00C0A6F3 /* SpinLock.h */; };
+		9AD1E256151CDC4C00C0A6F3 /* Thread.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD1E243151CDC4C00C0A6F3 /* Thread.h */; };
+		9AD1E257151CDC4C00C0A6F3 /* ThreadPosix.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD1E244151CDC4C00C0A6F3 /* ThreadPosix.h */; };
+		9AD1E258151CDC4C00C0A6F3 /* Utility.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD1E245151CDC4C00C0A6F3 /* Utility.h */; };
+		9AD1E25B151CDCB000C0A6F3 /* SemaphorePosix.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD1E259151CDCB000C0A6F3 /* SemaphorePosix.h */; };
+		9AD1E25C151CDCB000C0A6F3 /* SpinLockPosix.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD1E25A151CDCB000C0A6F3 /* SpinLockPosix.h */; };
+		9AD1E25E151CDF8000C0A6F3 /* SpinLockMac.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD1E25D151CDF8000C0A6F3 /* SpinLockMac.h */; };
+		9AD1E260151CDF9600C0A6F3 /* SpinLockMac.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AD1E25F151CDF9600C0A6F3 /* SpinLockMac.cpp */; };
+		9AD1E262151CE4F200C0A6F3 /* ThreadPosix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AD1E261151CE4F200C0A6F3 /* ThreadPosix.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9A26052E151CCEEB0097623B /* libBaseClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBaseClient.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A260531151CCEEB0097623B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9A260535151CCEEB0097623B /* BaseClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BaseClient-Prefix.pch"; sourceTree = "<group>"; };
+		9A26055A151CD0540097623B /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		9A26055C151CD6C20097623B /* MutexPosix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutexPosix.h; sourceTree = "<group>"; };
+		9A26055E151CD91D0097623B /* RWLockPosix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWLockPosix.h; sourceTree = "<group>"; };
+		9AD1E235151CDC4C00C0A6F3 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		9AD1E236151CDC4C00C0A6F3 /* EventPosix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventPosix.cpp; sourceTree = "<group>"; };
+		9AD1E237151CDC4C00C0A6F3 /* EventPosix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventPosix.h; sourceTree = "<group>"; };
+		9AD1E238151CDC4C00C0A6F3 /* Mutex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mutex.h; sourceTree = "<group>"; };
+		9AD1E239151CDC4C00C0A6F3 /* MutexPosix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MutexPosix.cpp; sourceTree = "<group>"; };
+		9AD1E23A151CDC4C00C0A6F3 /* MutexPosix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutexPosix.h; sourceTree = "<group>"; };
+		9AD1E23B151CDC4C00C0A6F3 /* Noncopyable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Noncopyable.h; sourceTree = "<group>"; };
+		9AD1E23C151CDC4C00C0A6F3 /* RWLock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWLock.h; sourceTree = "<group>"; };
+		9AD1E23D151CDC4C00C0A6F3 /* RWLockPosix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RWLockPosix.cpp; sourceTree = "<group>"; };
+		9AD1E23E151CDC4C00C0A6F3 /* RWLockPosix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWLockPosix.h; sourceTree = "<group>"; };
+		9AD1E23F151CDC4C00C0A6F3 /* SemaphorePosix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SemaphorePosix.cpp; sourceTree = "<group>"; };
+		9AD1E240151CDC4C00C0A6F3 /* Semaphore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Semaphore.h; sourceTree = "<group>"; };
+		9AD1E241151CDC4C00C0A6F3 /* SpinLockPosix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpinLockPosix.cpp; sourceTree = "<group>"; };
+		9AD1E242151CDC4C00C0A6F3 /* SpinLock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpinLock.h; sourceTree = "<group>"; };
+		9AD1E243151CDC4C00C0A6F3 /* Thread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Thread.h; sourceTree = "<group>"; };
+		9AD1E244151CDC4C00C0A6F3 /* ThreadPosix.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = ThreadPosix.h; sourceTree = "<group>"; };
+		9AD1E245151CDC4C00C0A6F3 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		9AD1E259151CDCB000C0A6F3 /* SemaphorePosix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SemaphorePosix.h; sourceTree = "<group>"; };
+		9AD1E25A151CDCB000C0A6F3 /* SpinLockPosix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpinLockPosix.h; sourceTree = "<group>"; };
+		9AD1E25D151CDF8000C0A6F3 /* SpinLockMac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpinLockMac.h; sourceTree = "<group>"; };
+		9AD1E25F151CDF9600C0A6F3 /* SpinLockMac.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpinLockMac.cpp; sourceTree = "<group>"; };
+		9AD1E261151CE4F200C0A6F3 /* ThreadPosix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ThreadPosix.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9A26052B151CCEEB0097623B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A260532151CCEEB0097623B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9A260523151CCEEA0097623B = {
+			isa = PBXGroup;
+			children = (
+				9A260533151CCEEB0097623B /* BaseClient */,
+				9A260530151CCEEB0097623B /* Frameworks */,
+				9A26052F151CCEEB0097623B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9A26052F151CCEEB0097623B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A26052E151CCEEB0097623B /* libBaseClient.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A260530151CCEEB0097623B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A260531151CCEEB0097623B /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9A260533151CCEEB0097623B /* BaseClient */ = {
+			isa = PBXGroup;
+			children = (
+				9A26055C151CD6C20097623B /* MutexPosix.h */,
+				9A26055E151CD91D0097623B /* RWLockPosix.h */,
+				9AD1E235151CDC4C00C0A6F3 /* Event.h */,
+				9AD1E236151CDC4C00C0A6F3 /* EventPosix.cpp */,
+				9AD1E237151CDC4C00C0A6F3 /* EventPosix.h */,
+				9AD1E238151CDC4C00C0A6F3 /* Mutex.h */,
+				9AD1E239151CDC4C00C0A6F3 /* MutexPosix.cpp */,
+				9AD1E23A151CDC4C00C0A6F3 /* MutexPosix.h */,
+				9AD1E23B151CDC4C00C0A6F3 /* Noncopyable.h */,
+				9AD1E23C151CDC4C00C0A6F3 /* RWLock.h */,
+				9AD1E23D151CDC4C00C0A6F3 /* RWLockPosix.cpp */,
+				9AD1E23E151CDC4C00C0A6F3 /* RWLockPosix.h */,
+				9AD1E23F151CDC4C00C0A6F3 /* SemaphorePosix.cpp */,
+				9AD1E240151CDC4C00C0A6F3 /* Semaphore.h */,
+				9AD1E259151CDCB000C0A6F3 /* SemaphorePosix.h */,
+				9AD1E241151CDC4C00C0A6F3 /* SpinLockPosix.cpp */,
+				9AD1E25A151CDCB000C0A6F3 /* SpinLockPosix.h */,
+				9AD1E25D151CDF8000C0A6F3 /* SpinLockMac.h */,
+				9AD1E25F151CDF9600C0A6F3 /* SpinLockMac.cpp */,
+				9AD1E242151CDC4C00C0A6F3 /* SpinLock.h */,
+				9AD1E243151CDC4C00C0A6F3 /* Thread.h */,
+				9AD1E261151CE4F200C0A6F3 /* ThreadPosix.cpp */,
+				9AD1E244151CDC4C00C0A6F3 /* ThreadPosix.h */,
+				9AD1E245151CDC4C00C0A6F3 /* Utility.h */,
+				9A26055A151CD0540097623B /* Utility.h */,
+				9A260534151CCEEB0097623B /* Supporting Files */,
+			);
+			path = BaseClient;
+			sourceTree = "<group>";
+		};
+		9A260534151CCEEB0097623B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9A260535151CCEEB0097623B /* BaseClient-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		9A26052C151CCEEB0097623B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A26055B151CD0540097623B /* Utility.h in Headers */,
+				9A26055D151CD6C20097623B /* MutexPosix.h in Headers */,
+				9A26055F151CD91D0097623B /* RWLockPosix.h in Headers */,
+				9AD1E248151CDC4C00C0A6F3 /* Event.h in Headers */,
+				9AD1E24A151CDC4C00C0A6F3 /* EventPosix.h in Headers */,
+				9AD1E24B151CDC4C00C0A6F3 /* Mutex.h in Headers */,
+				9AD1E24D151CDC4C00C0A6F3 /* MutexPosix.h in Headers */,
+				9AD1E24E151CDC4C00C0A6F3 /* Noncopyable.h in Headers */,
+				9AD1E24F151CDC4C00C0A6F3 /* RWLock.h in Headers */,
+				9AD1E251151CDC4C00C0A6F3 /* RWLockPosix.h in Headers */,
+				9AD1E253151CDC4C00C0A6F3 /* Semaphore.h in Headers */,
+				9AD1E255151CDC4C00C0A6F3 /* SpinLock.h in Headers */,
+				9AD1E256151CDC4C00C0A6F3 /* Thread.h in Headers */,
+				9AD1E257151CDC4C00C0A6F3 /* ThreadPosix.h in Headers */,
+				9AD1E258151CDC4C00C0A6F3 /* Utility.h in Headers */,
+				9AD1E25B151CDCB000C0A6F3 /* SemaphorePosix.h in Headers */,
+				9AD1E25C151CDCB000C0A6F3 /* SpinLockPosix.h in Headers */,
+				9AD1E25E151CDF8000C0A6F3 /* SpinLockMac.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		9A26052D151CCEEB0097623B /* BaseClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A26053B151CCEEB0097623B /* Build configuration list for PBXNativeTarget "BaseClient" */;
+			buildPhases = (
+				9A26052A151CCEEB0097623B /* Sources */,
+				9A26052B151CCEEB0097623B /* Frameworks */,
+				9A26052C151CCEEB0097623B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BaseClient;
+			productName = BaseClient;
+			productReference = 9A26052E151CCEEB0097623B /* libBaseClient.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9A260525151CCEEA0097623B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 9A260528151CCEEA0097623B /* Build configuration list for PBXProject "BaseClient" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9A260523151CCEEA0097623B;
+			productRefGroup = 9A26052F151CCEEB0097623B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9A26052D151CCEEB0097623B /* BaseClient */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9A26052A151CCEEB0097623B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AD1E249151CDC4C00C0A6F3 /* EventPosix.cpp in Sources */,
+				9AD1E24C151CDC4C00C0A6F3 /* MutexPosix.cpp in Sources */,
+				9AD1E250151CDC4C00C0A6F3 /* RWLockPosix.cpp in Sources */,
+				9AD1E260151CDF9600C0A6F3 /* SpinLockMac.cpp in Sources */,
+				9AD1E262151CE4F200C0A6F3 /* ThreadPosix.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		9A260539151CCEEB0097623B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9A26053A151CCEEB0097623B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9A26053C151CCEEB0097623B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/BaseClient.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BaseClient/BaseClient-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		9A26053D151CCEEB0097623B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/BaseClient.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BaseClient/BaseClient-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9A260528151CCEEA0097623B /* Build configuration list for PBXProject "BaseClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A260539151CCEEB0097623B /* Debug */,
+				9A26053A151CCEEB0097623B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A26053B151CCEEB0097623B /* Build configuration list for PBXNativeTarget "BaseClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A26053C151CCEEB0097623B /* Debug */,
+				9A26053D151CCEEB0097623B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9A260525151CCEEA0097623B /* Project object */;
+}
