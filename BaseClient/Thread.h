@@ -2,13 +2,16 @@
 #define _BASECLIENT_THREAD_H
 
 #include "Noncopyable.h"
+#include <stdint.h>
+#include <stddef.h>
 
 namespace BaseClient
 {
 
 #define ThreadObject void*
-typedef bool(*ThreadFunction)(ThreadObject);
+typedef void(*ThreadFunction)(ThreadObject);
 typedef uint32_t ThreadId_t;
+const size_t kDefaultStackSize = 4*1024*1024;
 
 typedef enum
 {
@@ -35,13 +38,8 @@ public:
     static ThreadId_t getThreadId();
     
     virtual bool start(ThreadId_t &threadId) = 0;
-    virtual void makeUnalive() = 0;
-    
-    virtual bool setAffinity(const int *processorNumbers, const unsigned int amountOfProcessors) {
-        return false;
-    }
-    
     virtual bool cancel() = 0;
+    virtual bool isAlive() = 0;
 };
 
 }

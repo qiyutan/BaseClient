@@ -23,7 +23,7 @@ Mutex *MutexPosix::create()
 	
 void MutexPosix::destroy(Mutex *m)
 {
-	C_DELETE(m);
+	DELETE_S(m);
 }
 
 MutexPosix::MutexPosix(pthread_mutex_t m)

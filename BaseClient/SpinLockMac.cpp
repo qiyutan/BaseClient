@@ -18,7 +18,7 @@ SpinLock *SpinLockMac::create()
 
 void SpinLockMac::destroy(SpinLock *s)
 {
-    C_DELETE(s);
+    DELETE_S(s);
 }
 
 void SpinLockMac::lock()

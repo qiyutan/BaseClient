@@ -9,10 +9,11 @@
 #ifndef BaseClient_Utility_h
 #define BaseClient_Utility_h
 
-#define C_DELETE(p)	do{	 \
+#define DELETE_S(p)	do{	 \
                             if(p)	delete (p);	\
                             p = NULL;	\
                         }while(0)
 
+#define CHECK_R(x) do{ if(!x) return false; } while(0)
 
 #endif

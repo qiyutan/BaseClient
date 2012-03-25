@@ -22,7 +22,7 @@ Event *EventPosix::create()
 
 void EventPosix::destroy(Event *e)
 {
-	C_DELETE(e);
+	DELETE_S(e);
 }
 
 EventPosix::EventPosix(pthread_cond_t cond, pthread_mutex_t mutex)

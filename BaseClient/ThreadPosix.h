@@ -23,12 +23,9 @@ public:
     //Get current kenerl thread id
     static ThreadId_t getThreadId();
     
-    bool start(ThreadId_t &threadId);
-    void makeUnalive();
-    bool setAffinity(const int *processorNumbers, const unsigned int amountOfProcessors);    
+    bool start(ThreadId_t &threadId); 
     bool cancel();
-    
-    void run();
+    bool isAlive();
     
 protected:
     ThreadPosix(ThreadFunction func, ThreadObject obj, ThreadPriority prio, const char* threadName);
@@ -36,22 +33,19 @@ protected:
     virtual ~ThreadPosix();
     
 private:
+    void run();
+    static void* startThread(void *threadObj);
+    
+private:
     ThreadFunction _func;
     ThreadObject _obj;
+    ThreadPriority _priority;
     
-    // internal state
-    bool                    _alive;
-    bool                    _dead;
-    ThreadPriority          _priority;
-    Event                   *_event;
+    std::string _name;
     
-    // zero-terminated thread name string
-    std::string     _name;
-    bool                    _setThreadName;
-    
-    pid_t                   _pid;
-    pthread_attr_t          _attr;
-    pthread_t               _thread;
+    pid_t _pid;
+    pthread_attr_t _attr;
+    pthread_t _thread;
     
 };
 

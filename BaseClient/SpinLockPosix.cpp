@@ -18,7 +18,7 @@ SpinLock *SpinLockPosix::create()
 
 void SpinLockPosix::destroy(SpinLock *s)
 {
-	C_DELETE(s);
+	DELETE_S(s);
 }
 
 void SpinLockPosix::lock()

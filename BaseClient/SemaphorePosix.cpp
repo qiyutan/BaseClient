@@ -48,7 +48,7 @@ Semaphore *SemaphorePosix::create(unsigned int value)
 
 void SemaphorePosix::destroy(Semaphore *s)
 {
-	C_DELETE(s);
+	DELETE_S(s);
 }
 
 bool SemaphorePosix::unlink(const char *name)

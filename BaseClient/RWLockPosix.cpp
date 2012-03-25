@@ -16,7 +16,7 @@ RWLock *RWLockPosix::create()
 
 void RWLockPosix::destroy(RWLock *lock)
 {
-	C_DELETE(lock);
+	DELETE_S(lock);
 }
 
 void RWLockPosix::rlock()
