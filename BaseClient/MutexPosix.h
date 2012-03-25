@@ -18,7 +18,6 @@ class MutexPosix : public Mutex
 {
 public:
 	static Mutex* create();
-	static void destroy(Mutex *m);
     
 	void lock();
 	void unlock();

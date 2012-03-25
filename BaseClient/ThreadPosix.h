@@ -10,9 +10,11 @@ namespace BaseClient
 {
 
 class Event;
+class ThreadQueue;
     
 class ThreadPosix : public Thread
 {
+    friend class ThreadQueue;
 public:
     //Factory method
     static Thread* create(ThreadFunction func = 0, 
@@ -35,6 +37,8 @@ protected:
 private:
     void run();
     static void* startThread(void *threadObj);
+    ThreadQueue *getQueue();
+    bool setQueue(ThreadQueue *q);
     
 private:
     ThreadFunction _func;

@@ -11,7 +11,6 @@ class SpinLockPosix : public SpinLock
 {
 public:
 	SpinLock *create();
-	void destroy(SpinLock *s);
 
 	void lock();
 	bool trylock();

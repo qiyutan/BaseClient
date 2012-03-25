@@ -10,6 +10,12 @@
 		9A260532151CCEEB0097623B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A260531151CCEEB0097623B /* Foundation.framework */; };
 		9A26055D151CD6C20097623B /* MutexPosix.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A26055C151CD6C20097623B /* MutexPosix.h */; };
 		9A26055F151CD91D0097623B /* RWLockPosix.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A26055E151CD91D0097623B /* RWLockPosix.h */; };
+		9A6D4E4E151F8AC700999602 /* ThreadQueueImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A6D4E4D151F8AC700999602 /* ThreadQueueImpl.h */; };
+		9A6D4E50151F8E8700999602 /* ThreadQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A6D4E4F151F8E8700999602 /* ThreadQueue.h */; };
+		9A6D4E52151F902100999602 /* Event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6D4E51151F902100999602 /* Event.cpp */; };
+		9A6D4E54151F911800999602 /* ThreadQueueImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6D4E53151F911700999602 /* ThreadQueueImpl.cpp */; };
+		9A6D4E56151F912600999602 /* ThreadQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6D4E55151F912600999602 /* ThreadQueue.cpp */; };
+		9A6D4E58151F97CA00999602 /* Thread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6D4E57151F97CA00999602 /* Thread.cpp */; };
 		9AD1E248151CDC4C00C0A6F3 /* Event.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD1E235151CDC4C00C0A6F3 /* Event.h */; };
 		9AD1E249151CDC4C00C0A6F3 /* EventPosix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AD1E236151CDC4C00C0A6F3 /* EventPosix.cpp */; };
 		9AD1E24A151CDC4C00C0A6F3 /* EventPosix.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD1E237151CDC4C00C0A6F3 /* EventPosix.h */; };
@@ -38,6 +44,12 @@
 		9A260535151CCEEB0097623B /* BaseClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BaseClient-Prefix.pch"; sourceTree = "<group>"; };
 		9A26055C151CD6C20097623B /* MutexPosix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutexPosix.h; sourceTree = "<group>"; };
 		9A26055E151CD91D0097623B /* RWLockPosix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWLockPosix.h; sourceTree = "<group>"; };
+		9A6D4E4D151F8AC700999602 /* ThreadQueueImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadQueueImpl.h; sourceTree = "<group>"; };
+		9A6D4E4F151F8E8700999602 /* ThreadQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadQueue.h; sourceTree = "<group>"; };
+		9A6D4E51151F902100999602 /* Event.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Event.cpp; sourceTree = "<group>"; };
+		9A6D4E53151F911700999602 /* ThreadQueueImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ThreadQueueImpl.cpp; sourceTree = "<group>"; };
+		9A6D4E55151F912600999602 /* ThreadQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ThreadQueue.cpp; sourceTree = "<group>"; };
+		9A6D4E57151F97CA00999602 /* Thread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Thread.cpp; sourceTree = "<group>"; };
 		9AD1E235151CDC4C00C0A6F3 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		9AD1E236151CDC4C00C0A6F3 /* EventPosix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventPosix.cpp; sourceTree = "<group>"; };
 		9AD1E237151CDC4C00C0A6F3 /* EventPosix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventPosix.h; sourceTree = "<group>"; };
@@ -102,30 +114,8 @@
 		9A260533151CCEEB0097623B /* BaseClient */ = {
 			isa = PBXGroup;
 			children = (
-				9A26055C151CD6C20097623B /* MutexPosix.h */,
-				9A26055E151CD91D0097623B /* RWLockPosix.h */,
-				9AD1E235151CDC4C00C0A6F3 /* Event.h */,
-				9AD1E236151CDC4C00C0A6F3 /* EventPosix.cpp */,
-				9AD1E237151CDC4C00C0A6F3 /* EventPosix.h */,
-				9AD1E238151CDC4C00C0A6F3 /* Mutex.h */,
-				9AD1E239151CDC4C00C0A6F3 /* MutexPosix.cpp */,
-				9AD1E23A151CDC4C00C0A6F3 /* MutexPosix.h */,
-				9AD1E23B151CDC4C00C0A6F3 /* Noncopyable.h */,
-				9AD1E23C151CDC4C00C0A6F3 /* RWLock.h */,
-				9AD1E23D151CDC4C00C0A6F3 /* RWLockPosix.cpp */,
-				9AD1E23E151CDC4C00C0A6F3 /* RWLockPosix.h */,
-				9AD1E23F151CDC4C00C0A6F3 /* SemaphorePosix.cpp */,
-				9AD1E240151CDC4C00C0A6F3 /* Semaphore.h */,
-				9AD1E259151CDCB000C0A6F3 /* SemaphorePosix.h */,
-				9AD1E241151CDC4C00C0A6F3 /* SpinLockPosix.cpp */,
-				9AD1E25A151CDCB000C0A6F3 /* SpinLockPosix.h */,
-				9AD1E25D151CDF8000C0A6F3 /* SpinLockMac.h */,
-				9AD1E25F151CDF9600C0A6F3 /* SpinLockMac.cpp */,
-				9AD1E242151CDC4C00C0A6F3 /* SpinLock.h */,
-				9AD1E243151CDC4C00C0A6F3 /* Thread.h */,
-				9AD1E261151CE4F200C0A6F3 /* ThreadPosix.cpp */,
-				9AD1E244151CDC4C00C0A6F3 /* ThreadPosix.h */,
-				9AD1E245151CDC4C00C0A6F3 /* Utility.h */,
+				9A6D4E4C151F8AA300999602 /* src */,
+				9A6D4E4B151F8A6400999602 /* includes */,
 				9A260534151CCEEB0097623B /* Supporting Files */,
 			);
 			path = BaseClient;
@@ -137,6 +127,50 @@
 				9A260535151CCEEB0097623B /* BaseClient-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9A6D4E4B151F8A6400999602 /* includes */ = {
+			isa = PBXGroup;
+			children = (
+				9AD1E23B151CDC4C00C0A6F3 /* Noncopyable.h */,
+				9AD1E245151CDC4C00C0A6F3 /* Utility.h */,
+				9AD1E243151CDC4C00C0A6F3 /* Thread.h */,
+				9AD1E240151CDC4C00C0A6F3 /* Semaphore.h */,
+				9AD1E242151CDC4C00C0A6F3 /* SpinLock.h */,
+				9AD1E23C151CDC4C00C0A6F3 /* RWLock.h */,
+				9AD1E238151CDC4C00C0A6F3 /* Mutex.h */,
+				9AD1E235151CDC4C00C0A6F3 /* Event.h */,
+				9A6D4E4F151F8E8700999602 /* ThreadQueue.h */,
+			);
+			name = includes;
+			sourceTree = "<group>";
+		};
+		9A6D4E4C151F8AA300999602 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				9A26055C151CD6C20097623B /* MutexPosix.h */,
+				9A26055E151CD91D0097623B /* RWLockPosix.h */,
+				9AD1E236151CDC4C00C0A6F3 /* EventPosix.cpp */,
+				9AD1E237151CDC4C00C0A6F3 /* EventPosix.h */,
+				9AD1E239151CDC4C00C0A6F3 /* MutexPosix.cpp */,
+				9AD1E23A151CDC4C00C0A6F3 /* MutexPosix.h */,
+				9AD1E23D151CDC4C00C0A6F3 /* RWLockPosix.cpp */,
+				9AD1E23E151CDC4C00C0A6F3 /* RWLockPosix.h */,
+				9AD1E23F151CDC4C00C0A6F3 /* SemaphorePosix.cpp */,
+				9AD1E259151CDCB000C0A6F3 /* SemaphorePosix.h */,
+				9AD1E241151CDC4C00C0A6F3 /* SpinLockPosix.cpp */,
+				9AD1E25A151CDCB000C0A6F3 /* SpinLockPosix.h */,
+				9AD1E25D151CDF8000C0A6F3 /* SpinLockMac.h */,
+				9AD1E25F151CDF9600C0A6F3 /* SpinLockMac.cpp */,
+				9AD1E261151CE4F200C0A6F3 /* ThreadPosix.cpp */,
+				9AD1E244151CDC4C00C0A6F3 /* ThreadPosix.h */,
+				9A6D4E4D151F8AC700999602 /* ThreadQueueImpl.h */,
+				9A6D4E53151F911700999602 /* ThreadQueueImpl.cpp */,
+				9A6D4E51151F902100999602 /* Event.cpp */,
+				9A6D4E55151F912600999602 /* ThreadQueue.cpp */,
+				9A6D4E57151F97CA00999602 /* Thread.cpp */,
+			);
+			name = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +197,8 @@
 				9AD1E25B151CDCB000C0A6F3 /* SemaphorePosix.h in Headers */,
 				9AD1E25C151CDCB000C0A6F3 /* SpinLockPosix.h in Headers */,
 				9AD1E25E151CDF8000C0A6F3 /* SpinLockMac.h in Headers */,
+				9A6D4E4E151F8AC700999602 /* ThreadQueueImpl.h in Headers */,
+				9A6D4E50151F8E8700999602 /* ThreadQueue.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +257,10 @@
 				9AD1E250151CDC4C00C0A6F3 /* RWLockPosix.cpp in Sources */,
 				9AD1E260151CDF9600C0A6F3 /* SpinLockMac.cpp in Sources */,
 				9AD1E262151CE4F200C0A6F3 /* ThreadPosix.cpp in Sources */,
+				9A6D4E52151F902100999602 /* Event.cpp in Sources */,
+				9A6D4E54151F911800999602 /* ThreadQueueImpl.cpp in Sources */,
+				9A6D4E56151F912600999602 /* ThreadQueue.cpp in Sources */,
+				9A6D4E58151F97CA00999602 /* Thread.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,6 @@ class Mutex : public Noncopyable
 {
 public:
 	static Mutex* create();
-	static void destroy(Mutex *m);
     
 	virtual void lock() = 0;
 	virtual void unlock() = 0;

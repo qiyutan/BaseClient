@@ -20,11 +20,6 @@ Mutex *MutexPosix::create()
 	pthread_mutexattr_destroy(&a);
 	return pMutex;
 }
-	
-void MutexPosix::destroy(Mutex *m)
-{
-	DELETE_S(m);
-}
 
 MutexPosix::MutexPosix(pthread_mutex_t m)
 :_mutex(m)

@@ -46,11 +46,6 @@ Semaphore *SemaphorePosix::create(unsigned int value)
 	return NULL;
 }
 
-void SemaphorePosix::destroy(Semaphore *s)
-{
-	DELETE_S(s);
-}
-
 bool SemaphorePosix::unlink(const char *name)
 {
 	return 0 == se_unlink(name);

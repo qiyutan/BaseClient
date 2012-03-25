@@ -16,11 +16,6 @@ SpinLock *SpinLockMac::create()
     return new SpinLockMac();
 }
 
-void SpinLockMac::destroy(SpinLock *s)
-{
-    DELETE_S(s);
-}
-
 void SpinLockMac::lock()
 {
     OSSpinLockLock(&_spinlock);

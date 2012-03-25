@@ -10,7 +10,6 @@ class Event : public Noncopyable
 {
 public:
 	static Event *create();
-	static void destroy(Event *);
 
 	virtual void wait() = 0;
 	virtual bool trywait() = 0;

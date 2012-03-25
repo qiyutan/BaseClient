@@ -11,7 +11,6 @@ class EventPosix : public Event
 {
 public:
 	static Event *create();
-	static void destroy(Event *);
 
 	void wait();
 	bool trywait();

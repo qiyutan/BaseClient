@@ -23,9 +23,11 @@ typedef enum
 }ThreadPriority;
     
 #define kThreadMaxNameLength 64
-
+class ThreadQueue;
 class Thread : public Noncopyable
 {
+    friend class ThreadQueue;
+    
 public:
     
     //Factory method
@@ -36,10 +38,16 @@ public:
     
     //Get current kenerl thread id
     static ThreadId_t getThreadId();
-    
+    bool start();
     virtual bool start(ThreadId_t &threadId) = 0;
     virtual bool cancel() = 0;
     virtual bool isAlive() = 0;
+    
+private:
+    virtual bool setQueue(ThreadQueue *q) = 0;
+    
+private:
+    ThreadQueue *_threadQueue;
 };
 
 }

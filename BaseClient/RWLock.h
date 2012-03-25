@@ -11,7 +11,6 @@ class RWLock : public Noncopyable
 {
 public:
     static RWLock *create();
-    static void destroy(RWLock *lock);
     
     virtual void rlock() = 0;
     virtual bool tryRLock() = 0;

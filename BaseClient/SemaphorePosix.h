@@ -15,7 +15,6 @@ public:
 
 	//semphore in shared memory, used among threads.
 	static Semaphore *create(unsigned int value);
-	static void destroy(Semaphore *s);
 
 	//The name will be disassociated with any semaphore, but the semaphore won't be deallocated before all processes call close() to remove references they own.
 	static bool unlink(const char *name);

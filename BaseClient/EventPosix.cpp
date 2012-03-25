@@ -20,11 +20,6 @@ Event *EventPosix::create()
 	return e;
 }
 
-void EventPosix::destroy(Event *e)
-{
-	DELETE_S(e);
-}
-
 EventPosix::EventPosix(pthread_cond_t cond, pthread_mutex_t mutex)
 :_cond(cond), _mutex(mutex), _flag(false)
 {

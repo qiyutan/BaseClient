@@ -16,11 +16,6 @@ SpinLock *SpinLockPosix::create()
 	return NULL;
 }
 
-void SpinLockPosix::destroy(SpinLock *s)
-{
-	DELETE_S(s);
-}
-
 void SpinLockPosix::lock()
 {
 	pthread_spin_lock(&_spinlock);

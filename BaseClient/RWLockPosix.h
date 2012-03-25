@@ -18,7 +18,6 @@ class RWLockPosix : public RWLock
 {
 public:
     static RWLock *create();
-    static void destroy(RWLock *lock);
     
     void rlock();
     bool tryRLock();

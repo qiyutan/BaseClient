@@ -12,7 +12,6 @@ class SpinLock : public Noncopyable
 {
 public:
 	SpinLock *create();
-	void destroy(SpinLock *s);
 
 	virtual void lock() = 0;
 	virtual bool trylock() = 0;
