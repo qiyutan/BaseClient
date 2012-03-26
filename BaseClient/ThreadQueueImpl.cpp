@@ -21,6 +21,13 @@ static std::map<std::string, ThreadQueue*> name2ThreadQueues;
 typedef std::map<std::string, ThreadQueue*>::const_iterator Name2ThreadQueuesConstIterator;
 typedef std::map<std::string, ThreadQueue*>::iterator Name2ThreadQueuesIterator;
     
+static void deleteThread(Thread *t)
+{
+    if(t){
+        delete t;
+    }
+}
+    
 ThreadQueue *ThreadQueueImpl::create(const char *name, int concurrentThreadCount)
 {
     std::string strName = name;
@@ -69,7 +76,7 @@ ThreadQueueImpl::~ThreadQueueImpl()
     name2ThreadQueueMutex->lock();
     name2ThreadQueues.erase(_name);
     name2ThreadQueueMutex->unlock();
-    
+    delete _mutex;
 }
     
 bool ThreadQueueImpl::add(Thread *t)
@@ -78,7 +85,7 @@ bool ThreadQueueImpl::add(Thread *t)
         _mutex->lock();
         if(_runningThreads.size() < _concurrentThreadCount){
             t->start();
-            _runningThreads.push_back(t);
+            _runningThreads.insert(t);
         }
         else{
             _waitingThreads.push_back(t);
@@ -89,9 +96,37 @@ bool ThreadQueueImpl::add(Thread *t)
     return false;
 }
     
+void ThreadQueueImpl::cancel()
+{
+    _mutex->lock();
+    
+    std::for_each(_runningThreads.begin(), _runningThreads.end(), deleteThread);
+    std::for_each(_waitingThreads.begin(), _waitingThreads.end(), deleteThread);
+    
+    _mutex->unlock();
+}
+    
 void ThreadQueueImpl::remove(Thread *t)
 {
     _mutex->lock();
+    
+    std::set<Thread*>::iterator it = _runningThreads.find(t);
+    if(it != _runningThreads.end()){
+        delete *it;
+        _runningThreads.erase(it);
+        if(!_waitingThreads.empty()){
+            Thread *nextThread = _waitingThreads.front();
+            _waitingThreads.pop_front();
+            _runningThreads.insert(nextThread);
+        }
+    }
+    else{
+        std::deque<Thread*>::iterator it2 = std::find(_waitingThreads.begin(), _waitingThreads.end(), t);
+        if(it2 != _waitingThreads.end()){
+            delete *it2;
+            _waitingThreads.erase(it2);
+        }
+    }
     
     _mutex->unlock();
 }

@@ -11,6 +11,7 @@
 
 #include "ThreadQueue.h"
 #include <deque>
+#include <set>
 #include <string>
 
 namespace BaseClient
@@ -24,10 +25,11 @@ class ThreadQueueImpl : public ThreadQueue
 public:
     static ThreadQueue *create(const char *name, int concurrentThreadCount = kDefaultConcurrentThreadCount);
     static ThreadQueue *getQueue(const char *name);
+    virtual ~ThreadQueueImpl();
+    
     bool add(Thread *t);
     void cancel();
-    
-    virtual ~ThreadQueueImpl();
+   
     
 protected:
     ThreadQueueImpl(const char *name, int concurrentThreadCount);
@@ -35,7 +37,7 @@ protected:
     
 private:
     Mutex *_mutex;
-    std::deque<Thread*> _runningThreads;
+    std::set<Thread*> _runningThreads;
     std::deque<Thread*> _waitingThreads;
     std::string _name;
     int _concurrentThreadCount;
