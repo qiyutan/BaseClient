@@ -1,7 +1,6 @@
 #ifndef _BASECLIENT_RW_LOCK_H
 #define _BASECLIENT_RW_LOCK_H
 
-#include <pthread.h>
 #include "Noncopyable.h"
 
 namespace BaseClient

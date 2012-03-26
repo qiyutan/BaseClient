@@ -8,6 +8,7 @@
 
 #include "Thread.h"
 #include "ThreadPosix.h"
+#include "ThreadQueue.h"
 
 namespace BaseClient
 {
@@ -33,6 +34,13 @@ bool Thread::setQueue(ThreadQueue *q)
         return true;
     }
     return false;
+}
+    
+void Thread::afterRun()
+{
+    if(_threadQueue){
+        _threadQueue->remove(this);
+    }
 }
     
 }

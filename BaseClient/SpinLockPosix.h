@@ -10,7 +10,7 @@ namespace BaseClient
 class SpinLockPosix : public SpinLock
 {
 public:
-	SpinLock *create();
+	static SpinLock *create();
 
 	void lock();
 	bool trylock();

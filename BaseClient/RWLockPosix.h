@@ -10,6 +10,7 @@
 #define BaseClient_RWLockPosix_h
 
 #include "RWLock.h"
+#include <pthread.h>
 
 namespace BaseClient
 {

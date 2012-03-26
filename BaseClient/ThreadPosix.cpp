@@ -9,17 +9,12 @@
 #include "ThreadPosix.h"
 
 #include <errno.h>
-#include <string.h> // strncpy
-#include <time.h>   // nanosleep
+#include <string.h> 
 #include <unistd.h>
 
-#ifdef WEBRTC_LINUX
 #include <sys/types.h>
 #include <sched.h>
 #include <sys/syscall.h>
-#include <linux/unistd.h>
-#include <sys/prctl.h>
-#endif
 
 #if defined(__MACH__)
 #include <mach/mach.h>
@@ -157,6 +152,7 @@ bool ThreadPosix::isAlive()
 void ThreadPosix::run()
 {
     _func(_obj);
+    Thread::afterRun();
 }
     
 }

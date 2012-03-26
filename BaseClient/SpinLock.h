@@ -11,7 +11,7 @@ namespace BaseClient
 class SpinLock : public Noncopyable
 {
 public:
-	SpinLock *create();
+	static SpinLock *create();
 
 	virtual void lock() = 0;
 	virtual bool trylock() = 0;

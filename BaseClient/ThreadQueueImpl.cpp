@@ -92,7 +92,6 @@ bool ThreadQueueImpl::add(Thread *t)
 void ThreadQueueImpl::remove(Thread *t)
 {
     _mutex->lock();
-   
     
     _mutex->unlock();
 }

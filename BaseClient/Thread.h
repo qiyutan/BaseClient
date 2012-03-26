@@ -43,6 +43,9 @@ public:
     virtual bool cancel() = 0;
     virtual bool isAlive() = 0;
     
+protected:
+    void afterRun();
+    
 private:
     virtual bool setQueue(ThreadQueue *q) = 0;
     
