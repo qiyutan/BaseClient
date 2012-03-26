@@ -17,8 +17,8 @@ class ThreadPosix : public Thread
     friend class ThreadQueue;
 public:
     //Factory method
-    static Thread* create(ThreadFunction func = 0, 
-                          ThreadObject obj= 0, 
+    static Thread* create(ThreadFunction func, 
+                          ThreadObject obj, 
                           ThreadPriority priority = kThreadPriorityDefault, 
                           const char* threadName = 0);
     
@@ -38,7 +38,6 @@ private:
     void run();
     static void* startThread(void *threadObj);
     ThreadQueue *getQueue();
-    bool setQueue(ThreadQueue *q);
     
 private:
     ThreadFunction _func;

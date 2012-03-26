@@ -118,6 +118,7 @@ void ThreadQueueImpl::remove(Thread *t)
             Thread *nextThread = _waitingThreads.front();
             _waitingThreads.pop_front();
             _runningThreads.insert(nextThread);
+            nextThread->start();
         }
     }
     else{

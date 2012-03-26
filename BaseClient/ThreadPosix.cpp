@@ -53,7 +53,12 @@ Thread* ThreadPosix::create(ThreadFunction func, ThreadObject obj, ThreadPriorit
     
 ThreadId_t ThreadPosix::getThreadId() 
 {
+    pthread_t t = pthread_self();
+#if defined (__MACH__)
+    return pthread_mach_thread_np(t);
+#else 
     return reinterpret_cast<ThreadId_t>(pthread_self());
+#endif
 }
     
 ThreadPosix::ThreadPosix(ThreadFunction func, ThreadObject obj, ThreadPriority prio, const char* threadName)
@@ -61,10 +66,11 @@ ThreadPosix::ThreadPosix(ThreadFunction func, ThreadObject obj, ThreadPriority p
     _obj(obj),
     _priority(prio),
     _pid(-1),
-    _thread(0),
-    _name(threadName)
+    _thread(0)
 {
-    
+    if(threadName){
+        _name = threadName;
+    }
 }
     
 bool ThreadPosix::init()

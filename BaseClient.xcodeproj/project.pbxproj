@@ -13,6 +13,10 @@
 		9A34262E1520D00100C52AA4 /* Mutex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A34262D1520D00100C52AA4 /* Mutex.cpp */; };
 		9A3426311520D06200C52AA4 /* RWLock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A3426301520D06200C52AA4 /* RWLock.cpp */; };
 		9A3426331520D0C100C52AA4 /* SpinLock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A3426321520D0C100C52AA4 /* SpinLock.cpp */; };
+		9A34263F1520DB5900C52AA4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A34263E1520DB5900C52AA4 /* main.cpp */; };
+		9A3426411520DB5900C52AA4 /* BaseClientTest.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A3426401520DB5900C52AA4 /* BaseClientTest.1 */; };
+		9A3426451520DD0600C52AA4 /* libBaseClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A26052E151CCEEB0097623B /* libBaseClient.a */; };
+		9A3426491520E34300C52AA4 /* libpthread.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3426481520E34300C52AA4 /* libpthread.dylib */; };
 		9A6D4E4E151F8AC700999602 /* ThreadQueueImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A6D4E4D151F8AC700999602 /* ThreadQueueImpl.h */; };
 		9A6D4E50151F8E8700999602 /* ThreadQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A6D4E4F151F8E8700999602 /* ThreadQueue.h */; };
 		9A6D4E52151F902100999602 /* Event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6D4E51151F902100999602 /* Event.cpp */; };
@@ -41,6 +45,29 @@
 		9AD1E262151CE4F200C0A6F3 /* ThreadPosix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AD1E261151CE4F200C0A6F3 /* ThreadPosix.cpp */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		9A3426461520DD3C00C52AA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A260525151CCEEA0097623B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A26052D151CCEEB0097623B;
+			remoteInfo = BaseClient;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9A3426391520DB5900C52AA4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				9A3426411520DB5900C52AA4 /* BaseClientTest.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		9A26052E151CCEEB0097623B /* libBaseClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBaseClient.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A260531151CCEEB0097623B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -50,6 +77,10 @@
 		9A34262D1520D00100C52AA4 /* Mutex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mutex.cpp; sourceTree = "<group>"; };
 		9A3426301520D06200C52AA4 /* RWLock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RWLock.cpp; sourceTree = "<group>"; };
 		9A3426321520D0C100C52AA4 /* SpinLock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpinLock.cpp; sourceTree = "<group>"; };
+		9A34263B1520DB5900C52AA4 /* BaseClientTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BaseClientTest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A34263E1520DB5900C52AA4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		9A3426401520DB5900C52AA4 /* BaseClientTest.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = BaseClientTest.1; sourceTree = "<group>"; };
+		9A3426481520E34300C52AA4 /* libpthread.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpthread.dylib; path = SDKs/MacOSX10.7.sdk/usr/lib/libpthread.dylib; sourceTree = DEVELOPER_DIR; };
 		9A6D4E4D151F8AC700999602 /* ThreadQueueImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadQueueImpl.h; sourceTree = "<group>"; };
 		9A6D4E4F151F8E8700999602 /* ThreadQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadQueue.h; sourceTree = "<group>"; };
 		9A6D4E51151F902100999602 /* Event.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Event.cpp; sourceTree = "<group>"; };
@@ -85,7 +116,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A3426491520E34300C52AA4 /* libpthread.dylib in Frameworks */,
 				9A260532151CCEEB0097623B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A3426381520DB5900C52AA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A3426451520DD0600C52AA4 /* libBaseClient.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +135,9 @@
 		9A260523151CCEEA0097623B = {
 			isa = PBXGroup;
 			children = (
+				9A3426481520E34300C52AA4 /* libpthread.dylib */,
 				9A260533151CCEEB0097623B /* BaseClient */,
+				9A34263D1520DB5900C52AA4 /* BaseClientTest */,
 				9A260530151CCEEB0097623B /* Frameworks */,
 				9A26052F151CCEEB0097623B /* Products */,
 			);
@@ -105,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				9A26052E151CCEEB0097623B /* libBaseClient.a */,
+				9A34263B1520DB5900C52AA4 /* BaseClientTest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -133,6 +176,15 @@
 				9A260535151CCEEB0097623B /* BaseClient-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9A34263D1520DB5900C52AA4 /* BaseClientTest */ = {
+			isa = PBXGroup;
+			children = (
+				9A34263E1520DB5900C52AA4 /* main.cpp */,
+				9A3426401520DB5900C52AA4 /* BaseClientTest.1 */,
+			);
+			path = BaseClientTest;
 			sourceTree = "<group>";
 		};
 		9A6D4E4B151F8A6400999602 /* common */ = {
@@ -231,6 +283,24 @@
 			productReference = 9A26052E151CCEEB0097623B /* libBaseClient.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		9A34263A1520DB5900C52AA4 /* BaseClientTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A3426421520DB5900C52AA4 /* Build configuration list for PBXNativeTarget "BaseClientTest" */;
+			buildPhases = (
+				9A3426371520DB5900C52AA4 /* Sources */,
+				9A3426381520DB5900C52AA4 /* Frameworks */,
+				9A3426391520DB5900C52AA4 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A3426471520DD3C00C52AA4 /* PBXTargetDependency */,
+			);
+			name = BaseClientTest;
+			productName = BaseClientTest;
+			productReference = 9A34263B1520DB5900C52AA4 /* BaseClientTest */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -252,6 +322,7 @@
 			projectRoot = "";
 			targets = (
 				9A26052D151CCEEB0097623B /* BaseClient */,
+				9A34263A1520DB5900C52AA4 /* BaseClientTest */,
 			);
 		};
 /* End PBXProject section */
@@ -276,7 +347,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9A3426371520DB5900C52AA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A34263F1520DB5900C52AA4 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9A3426471520DD3C00C52AA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A26052D151CCEEB0097623B /* BaseClient */;
+			targetProxy = 9A3426461520DD3C00C52AA4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		9A260539151CCEEB0097623B /* Debug */ = {
@@ -284,6 +371,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CONFIGURATION_BUILD_DIR = ../build/debug;
+				CONFIGURATION_TEMP_DIR = ../../build/debug;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -303,6 +392,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				"LIBRARY_SEARCH_PATHS[arch=*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -312,6 +402,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CONFIGURATION_BUILD_DIR = ../build/release;
+				CONFIGURATION_TEMP_DIR = ../../build/release;
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = CLIENT_MAC;
@@ -328,11 +420,15 @@
 		9A26053C151CCEEB0097623B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				CONFIGURATION_BUILD_DIR = ../build/debug;
+				CONFIGURATION_TEMP_DIR = ../build/debug;
 				DSTROOT = /tmp/BaseClient.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BaseClient/BaseClient-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -340,12 +436,42 @@
 		9A26053D151CCEEB0097623B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				CONFIGURATION_BUILD_DIR = ../build/release;
+				CONFIGURATION_TEMP_DIR = ../build/release;
 				DSTROOT = /tmp/BaseClient.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BaseClient/BaseClient-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		9A3426431520DB5900C52AA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		9A3426441520DB5900C52AA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -369,6 +495,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		9A3426421520DB5900C52AA4 /* Build configuration list for PBXNativeTarget "BaseClientTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A3426431520DB5900C52AA4 /* Debug */,
+				9A3426441520DB5900C52AA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

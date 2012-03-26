@@ -31,8 +31,8 @@ class Thread : public Noncopyable
 public:
     
     //Factory method
-    static Thread* create(ThreadFunction func = 0, 
-                          ThreadObject obj= 0, 
+    static Thread* create(ThreadFunction func, 
+                          ThreadObject obj, 
                           ThreadPriority priority = kThreadPriorityDefault, 
                           const char* threadName = 0);
     
@@ -47,7 +47,7 @@ protected:
     void afterRun();
     
 private:
-    virtual bool setQueue(ThreadQueue *q) = 0;
+    virtual bool setQueue(ThreadQueue *q);
     
 private:
     ThreadQueue *_threadQueue;
