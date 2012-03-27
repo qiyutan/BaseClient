@@ -23,6 +23,9 @@
 		9A6D4E54151F911800999602 /* ThreadQueueImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6D4E53151F911700999602 /* ThreadQueueImpl.cpp */; };
 		9A6D4E56151F912600999602 /* ThreadQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6D4E55151F912600999602 /* ThreadQueue.cpp */; };
 		9A6D4E58151F97CA00999602 /* Thread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6D4E57151F97CA00999602 /* Thread.cpp */; };
+		9A7AC44B1521F2EF006C927F /* Any.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A7AC4481521F2EF006C927F /* Any.cpp */; };
+		9A7AC44C1521F2EF006C927F /* Any.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A7AC4491521F2EF006C927F /* Any.h */; };
+		9A7AC44D1521F2EF006C927F /* SmartPtr.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A7AC44A1521F2EF006C927F /* SmartPtr.h */; };
 		9AD1E248151CDC4C00C0A6F3 /* Event.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD1E235151CDC4C00C0A6F3 /* Event.h */; };
 		9AD1E249151CDC4C00C0A6F3 /* EventPosix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AD1E236151CDC4C00C0A6F3 /* EventPosix.cpp */; };
 		9AD1E24A151CDC4C00C0A6F3 /* EventPosix.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AD1E237151CDC4C00C0A6F3 /* EventPosix.h */; };
@@ -87,6 +90,9 @@
 		9A6D4E53151F911700999602 /* ThreadQueueImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ThreadQueueImpl.cpp; sourceTree = "<group>"; };
 		9A6D4E55151F912600999602 /* ThreadQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ThreadQueue.cpp; sourceTree = "<group>"; };
 		9A6D4E57151F97CA00999602 /* Thread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Thread.cpp; sourceTree = "<group>"; };
+		9A7AC4481521F2EF006C927F /* Any.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Any.cpp; sourceTree = "<group>"; };
+		9A7AC4491521F2EF006C927F /* Any.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Any.h; sourceTree = "<group>"; };
+		9A7AC44A1521F2EF006C927F /* SmartPtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmartPtr.h; sourceTree = "<group>"; };
 		9AD1E235151CDC4C00C0A6F3 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		9AD1E236151CDC4C00C0A6F3 /* EventPosix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventPosix.cpp; sourceTree = "<group>"; };
 		9AD1E237151CDC4C00C0A6F3 /* EventPosix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventPosix.h; sourceTree = "<group>"; };
@@ -190,6 +196,9 @@
 		9A6D4E4B151F8A6400999602 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				9A7AC4481521F2EF006C927F /* Any.cpp */,
+				9A7AC4491521F2EF006C927F /* Any.h */,
+				9A7AC44A1521F2EF006C927F /* SmartPtr.h */,
 				9AD1E23B151CDC4C00C0A6F3 /* Noncopyable.h */,
 				9AD1E245151CDC4C00C0A6F3 /* Utility.h */,
 				9AD1E240151CDC4C00C0A6F3 /* Semaphore.h */,
@@ -260,6 +269,8 @@
 				9AD1E25E151CDF8000C0A6F3 /* SpinLockMac.h in Headers */,
 				9A6D4E4E151F8AC700999602 /* ThreadQueueImpl.h in Headers */,
 				9A6D4E50151F8E8700999602 /* ThreadQueue.h in Headers */,
+				9A7AC44C1521F2EF006C927F /* Any.h in Headers */,
+				9A7AC44D1521F2EF006C927F /* SmartPtr.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +355,7 @@
 				9A34262E1520D00100C52AA4 /* Mutex.cpp in Sources */,
 				9A3426311520D06200C52AA4 /* RWLock.cpp in Sources */,
 				9A3426331520D0C100C52AA4 /* SpinLock.cpp in Sources */,
+				9A7AC44B1521F2EF006C927F /* Any.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +515,7 @@
 				9A3426441520DB5900C52AA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

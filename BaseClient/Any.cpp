@@ -1,8 +1,8 @@
-#include <cstring>
-#include <cassert>
 #include "Any.h"
 
-namespace qy
+#include <cassert>
+
+namespace BaseClient
 {
 
 AnyArray::AnyArray()
@@ -11,7 +11,7 @@ AnyArray::AnyArray()
 
 AnyArray::AnyArray(const AnyArray &array)
 {
-	for(array_t::const_iterator it = array.m_array.begin(); it != array.m_array.end(); it++)
+	for(array_t::const_iterator it = array._array.begin(); it != array._array.end(); it++)
 	{
 		AnyItem newItem = *it;
 		switch(it->type)
@@ -44,14 +44,14 @@ AnyArray::AnyArray(const AnyArray &array)
 		default:
 			break;
 		}
-		m_array.push_back(newItem);
+		_array.push_back(newItem);
 	}
 }
 
 AnyArray::~AnyArray()
 {
-	array_t::const_iterator it = m_array.begin();
-	for(; it != m_array.end(); it++)
+	array_t::const_iterator it = _array.begin();
+	for(; it != _array.end(); it++)
 	{
 		switch(it->type)
 		{
@@ -87,7 +87,7 @@ void AnyArray::addChar(char ch)
 	item.type = TYPE_CHAR;
 	item.len = sizeof(char);
 	item.value = new char(ch);
-	m_array.push_back(item);
+	_array.push_back(item);
 }
 
 void AnyArray::addInt32(int32_t value)
@@ -96,7 +96,7 @@ void AnyArray::addInt32(int32_t value)
 	item.type = TYPE_INT32;
 	item.len = sizeof(int32_t);
 	item.value = new int32_t(value);
-	m_array.push_back(item);
+	_array.push_back(item);
 }
 
 void AnyArray::addInt64(int64_t value)
@@ -105,7 +105,7 @@ void AnyArray::addInt64(int64_t value)
 	item.type = TYPE_INT64;
 	item.len = sizeof(int64_t);
 	item.value = new int64_t(value);
-	m_array.push_back(item);
+	_array.push_back(item);
 }
 
 void AnyArray::addDouble(double value)
@@ -114,7 +114,7 @@ void AnyArray::addDouble(double value)
 	item.type = TYPE_DOUBLE;
 	item.len = sizeof(double);
 	item.value = new double(value);
-	m_array.push_back(item);
+	_array.push_back(item);
 }
 
 void AnyArray::addString(const char *value)
@@ -129,7 +129,7 @@ void AnyArray::addString(const char *value)
 	item.len = len + 1;
 	item.value = new char[len + 1];
 	memcpy(item.value, value, len + 1);
-	m_array.push_back(item);
+	_array.push_back(item);
 }
 
 void AnyArray::addBytes(const char *value, size_t len)
@@ -139,7 +139,7 @@ void AnyArray::addBytes(const char *value, size_t len)
 	item.len = len;
 	item.value = new char[len];
 	memcpy(item.value, value, len);
-	m_array.push_back(item);
+	_array.push_back(item);
 }
 
 void AnyArray::addArray(const AnyArray *value)
@@ -148,7 +148,7 @@ void AnyArray::addArray(const AnyArray *value)
 	item.type = TYPE_ARRAY;
 	item.len = value->byteLength();
 	item.value = new AnyArray(*value);
-	m_array.push_back(item);
+	_array.push_back(item);
 }
 
 void AnyArray::addMap(const AnyMap *value)
@@ -157,16 +157,16 @@ void AnyArray::addMap(const AnyMap *value)
 	item.type = TYPE_MAP;
 	item.len = value->byteLength();
 	item.value = new AnyMap(*value);
-	m_array.push_back(item);
+	_array.push_back(item);
 }
 
 bool AnyArray::getChar(size_t index, char *value) const
 {
-	if(index >= m_array.size())
+	if(index >= _array.size())
 	{
 		return false;
 	}
-	AnyItem item = m_array[index];
+	AnyItem item = _array[index];
 	if(item.type != TYPE_CHAR)
 	{
 		return false;
@@ -177,11 +177,11 @@ bool AnyArray::getChar(size_t index, char *value) const
 
 bool AnyArray::getInt32(size_t index, int32_t *value) const
 {
-	if(index >= m_array.size())
+	if(index >= _array.size())
 	{
 		return false;
 	}
-	AnyItem item = m_array[index];
+	AnyItem item = _array[index];
 	if(item.type != TYPE_INT32)
 	{
 		return false;
@@ -192,11 +192,11 @@ bool AnyArray::getInt32(size_t index, int32_t *value) const
 
 bool AnyArray::getInt64(size_t index, int64_t *value) const
 {
-	if(index >= m_array.size())
+	if(index >= _array.size())
 	{
 		return false;
 	}
-	AnyItem item = m_array[index];
+	AnyItem item = _array[index];
 	if(item.type != TYPE_INT64)
 	{
 		return false;
@@ -207,11 +207,11 @@ bool AnyArray::getInt64(size_t index, int64_t *value) const
 
 bool AnyArray::getDouble(size_t index, double *value) const
 {
-	if(index >= m_array.size())
+	if(index >= _array.size())
 	{
 		return false;
 	}
-	AnyItem item = m_array[index];
+	AnyItem item = _array[index];
 	if(item.type != TYPE_DOUBLE)
 	{
 		return false;
@@ -222,11 +222,11 @@ bool AnyArray::getDouble(size_t index, double *value) const
 
 bool AnyArray::getString(size_t index, char **value) const
 {
-	if(index >= m_array.size())
+	if(index >= _array.size())
 	{
 		return false;
 	}
-	AnyItem item = m_array[index];
+	AnyItem item = _array[index];
 	if(item.type != TYPE_STRING)
 	{
 		return false;
@@ -237,11 +237,11 @@ bool AnyArray::getString(size_t index, char **value) const
 
 bool AnyArray::getBytes(size_t index, char **value, size_t *len) const
 {
-	if(index >= m_array.size())
+	if(index >= _array.size())
 	{
 		return false;
 	}
-	AnyItem item = m_array[index];
+	AnyItem item = _array[index];
 	if(item.type != TYPE_BYTES)
 	{
 		return false;
@@ -253,11 +253,11 @@ bool AnyArray::getBytes(size_t index, char **value, size_t *len) const
 
 bool AnyArray::getArray(size_t index, AnyArray **value) const
 {
-	if(index >= m_array.size())
+	if(index >= _array.size())
 	{
 		return false;
 	}
-	AnyItem item = m_array[index];
+	AnyItem item = _array[index];
 	if(item.type != TYPE_ARRAY)
 	{
 		return false;
@@ -268,11 +268,11 @@ bool AnyArray::getArray(size_t index, AnyArray **value) const
 
 bool AnyArray::getMap(size_t index, AnyMap **value) const
 {
-	if(index >= m_array.size())
+	if(index >= _array.size())
 	{
 		return false;
 	}
-	AnyItem item = m_array[index];
+	AnyItem item = _array[index];
 	if(item.type != TYPE_MAP)
 	{
 		return false;
@@ -283,18 +283,18 @@ bool AnyArray::getMap(size_t index, AnyMap **value) const
 
 AnyType AnyArray::type(size_t index) const
 {
-	if(index >= m_array.size())
+	if(index >= _array.size())
 	{
 		return TYPE_INVALID;
 	}
-	return m_array[index].type;
+	return _array[index].type;
 }
 
 size_t AnyArray::byteLength() const
 {
 	size_t len = 0;
-	array_t::const_iterator it = m_array.begin();
-	while(it != m_array.end())
+	array_t::const_iterator it = _array.begin();
+	while(it != _array.end())
 	{
 		len += sizeof(it->type);
 		len += sizeof(it->len);
@@ -344,7 +344,7 @@ AnyArray *AnyArray::create(const char *data, size_t len)
 			memcpy(item.value, data + p, k);
 		}
 		p += k;
-		pArray->m_array.push_back(item);
+		pArray->_array.push_back(item);
 	}
 	if(p != len)
 	{
@@ -357,7 +357,7 @@ AnyArray *AnyArray::create(const char *data, size_t len)
 bool AnyArray::serialize(char **data, size_t *len) const
 {
 	size_t dataSize = 0;
-	for(array_t::const_iterator it = m_array.begin(); it != m_array.end(); it++)
+	for(array_t::const_iterator it = _array.begin(); it != _array.end(); it++)
 	{
 		dataSize += it->len + sizeof(it->type) + sizeof(it->len);
 	}
@@ -375,7 +375,7 @@ bool AnyArray::serialize(char **data, size_t *len) const
 	}
 
 	size_t pi = 0;
-	for(array_t::const_iterator it = m_array.begin(); it != m_array.end(); it++)
+	for(array_t::const_iterator it = _array.begin(); it != _array.end(); it++)
 	{
 		memcpy(*data + pi, (char*)&it->type, sizeof(it->type));	
 		pi += sizeof(it->type);
@@ -433,8 +433,8 @@ AnyMap::AnyMap()
 
 AnyMap::AnyMap(const AnyMap &aMap)
 {
-	map_t::const_iterator it = aMap.m_map.begin();
-	for(; it != aMap.m_map.end(); it++)
+	map_t::const_iterator it = aMap._map.begin();
+	for(; it != aMap._map.end(); it++)
 	{
 		AnyItem item = it->second;
 		AnyItem newItem = item;
@@ -465,14 +465,14 @@ AnyMap::AnyMap(const AnyMap &aMap)
 			default:
 				break;
 		}
-		m_map[it->first] = newItem;
+		_map[it->first] = newItem;
 	}
 }
 
 AnyMap::~AnyMap()
 {
-	map_t::const_iterator it = m_map.begin();
-	for(; it != m_map.end(); it++)
+	map_t::const_iterator it = _map.begin();
+	for(; it != _map.end(); it++)
 	{
 		AnyItem item = it->second;
 		switch(item.type)
@@ -552,7 +552,7 @@ AnyMap *AnyMap::create(const char *data, size_t len)
 			memcpy(item.value, data + p, k);
 		}
 		p += k;
-		pMap->m_map[key] = item;
+		pMap->_map[key] = item;
 	}
 	return pMap;
 }
@@ -560,7 +560,7 @@ AnyMap *AnyMap::create(const char *data, size_t len)
 bool AnyMap::serialize(char **data, size_t *len) const
 {
 	size_t dataSize = 0;
-	for(map_t::const_iterator it = m_map.begin(); it != m_map.end(); it++)
+	for(map_t::const_iterator it = _map.begin(); it != _map.end(); it++)
 	{
 		dataSize += sizeof(it->first);
 		dataSize += it->second.len;
@@ -581,7 +581,7 @@ bool AnyMap::serialize(char **data, size_t *len) const
 	}
 
 	size_t pi = 0;
-	for(map_t::const_iterator it = m_map.begin(); it != m_map.end(); it++)
+	for(map_t::const_iterator it = _map.begin(); it != _map.end(); it++)
 	{
 		memcpy(*data + pi, (char*)&it->first, sizeof(it->first));
 		pi += sizeof(it->first);
@@ -828,8 +828,8 @@ const AnyItem *AnyMap::get(const char *key) const
 {
 	int64_t k;
 	memcpy(&k, key, sizeof(k));
-	map_t::const_iterator it = m_map.find(k);	
-	if(it != m_map.end())
+	map_t::const_iterator it = _map.find(k);	
+	if(it != _map.end())
 	{
 		return &it->second;
 	}
@@ -840,8 +840,8 @@ void AnyMap::insert(const char *key, const AnyItem &item)
 {
 	key_t k;
 	memcpy(&k, key, sizeof(k));
-	map_t::iterator it = m_map.find(k);
-	if(it != m_map.end())
+	map_t::iterator it = _map.find(k);
+	if(it != _map.end())
 	{
 		switch(it->second.type)
 		{
@@ -863,22 +863,22 @@ void AnyMap::insert(const char *key, const AnyItem &item)
 			break;
 		}
 	}
-	m_map[k] = item;
+	_map[k] = item;
 }
 
 bool AnyMap::contain(const char *key) const
 {
 	int64_t k;
 	memcpy(&k, key, sizeof(k));
-	return m_map.find(k) != m_map.end();
+	return _map.find(k) != _map.end();
 }
 
 AnyType AnyMap::type(const char *key) const
 {
 	int64_t k;
 	memcpy(&k, key, sizeof(k));
-	map_t::const_iterator it = m_map.find(k);
-	if(it != m_map.end())
+	map_t::const_iterator it = _map.find(k);
+	if(it != _map.end())
 	{
 		return it->second.type;
 	}
@@ -888,8 +888,8 @@ AnyType AnyMap::type(const char *key) const
 size_t AnyMap::byteLength() const
 {
 	size_t len = 0;
-	map_t::const_iterator it = m_map.begin();
-	while(it != m_map.end())
+	map_t::const_iterator it = _map.begin();
+	while(it != _map.end())
 	{
 		len += sizeof(it->first);
 		len += sizeof(it->second.type);

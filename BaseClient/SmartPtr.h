@@ -1,32 +1,32 @@
-#ifndef _SMART_PTR_H
-#define _SMART_PTR_H
+#ifndef _BASECLIENT_SMARTPTR_H
+#define _BASECLIENT_SMARTPTR_H
 
-namespace qy
+namespace BaseClient
 {
 
 template<class T>
 class RefObject
 {
 public:
-	RefObject(T *p):m_pObject(p)
+	RefObject(T *p):_pObject(p)
 	{
-		m_pCount = new int(1);
+		_pCount = new int(1);
 	}
 
 	RefObject(const RefObject &r) 
-	: m_pCount(r.m_pCount), m_pObject(r.m_pObject)
+	: _pCount(r._pCount), _pObject(r._pObject)
 	{
-		++*m_pCount;
+		++*_pCount;
 	}
 
 	RefObject& operator= (const RefObject &r) 
 	{ 
-		if(m_pCount != r.m_pCount)
+		if(_pCount != r._pCount)
 		{
 			release();
-			m_pCount = r.m_pCount;
-			m_pObject = r.m_pObject;
-			++*m_pCount;
+			_pCount = r._pCount;
+			_pObject = r._pObject;
+			++*_pCount;
 		}
 		return *this; 
 	}
@@ -38,23 +38,22 @@ public:
 
 	int count()
 	{
-		return *m_pCount;
+		return *_pCount;
 	}
 
 private:
 	void release()
 	{
-		--*m_pCount;
-		if(*m_pCount <= 0)
-		{
-			delete m_pCount;	
-			delete m_pObject;
+		--*_pCount;
+		if(*_pCount <= 0){
+			delete _pCount;	
+			delete _pObject;
 		}
 	}
 
 private:
-	int *m_pCount;
-	T *m_pObject;
+	int *_pCount;
+	T *_pObject;
 };
 
 template<class T>
@@ -62,14 +61,14 @@ class SmartPtr
 {
 public:
 	SmartPtr(T *p)
-	:m_ptr(p), 
-	 m_ref(p)
+	:_ptr(p), 
+	 _ref(p)
 	{
 	}
 
 	SmartPtr(const SmartPtr &ptr)
-	:m_ptr(ptr.m_ptr),
-	 m_ref(ptr.m_ref)
+	:_ptr(ptr._ptr),
+	 _ref(ptr._ref)
 	{
 	}
 
@@ -79,38 +78,38 @@ public:
 
 	SmartPtr& operator=(const SmartPtr &ptr)
 	{
-		m_ptr = ptr.m_ptr;
-		m_ref = ptr.m_ref;
+		_ptr = ptr._ptr;
+		_ref = ptr._ref;
 	}
 
 	bool operator==(const SmartPtr &ptr)
 	{
-		return m_ptr == ptr.m_ptr;
+		return _ptr == ptr._ptr;
 	}
 
 	bool operator!=(const SmartPtr &ptr)
 	{
-		return m_ptr != ptr.m_ptr;
+		return _ptr != ptr._ptr;
 	}
 
 	T *operator->()
 	{
-		return m_ptr;
+		return _ptr;
 	}
 
 	T operator*()
 	{
-		return *m_ptr;
+		return *_ptr;
 	}
 
 	int count()
 	{
-		return m_ref.count();
+		return _ref.count();
 	}
 
 private:
-	T *m_ptr;
-	RefObject<T> m_ref;
+	T *_ptr;
+	RefObject<T> _ref;
 };
 
 }

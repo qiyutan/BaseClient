@@ -1,12 +1,12 @@
-#ifndef _QY_ANY_H
-#define _QY_ANY_H
+#ifndef _BASECLIENT_ANY_H
+#define _BASECLIENT_ANY_H
 
 #include <cstring>
 #include <map>
 #include <vector>
 #include <stdint.h>
 
-namespace qy
+namespace BaseClient
 {
 
 typedef enum 
@@ -18,7 +18,7 @@ typedef enum
 	TYPE_STRING = 'grts',
 	TYPE_BYTES = 'bolb',
 	TYPE_ARRAY = 'yrra',
-	TYPE_MAP = 'pam',
+	TYPE_MAP = 'pam_',
 	TYPE_INVALID = 'avni'
 }AnyType;
 
@@ -63,11 +63,11 @@ public:
 
 	AnyType type(size_t index) const;
 
-	size_t size() const { return m_array.size(); }
+	size_t size() const { return _array.size(); }
 	size_t byteLength() const;
 
 private:
-	array_t m_array;
+	array_t _array;
 };
 
 class AnyMap
@@ -105,7 +105,7 @@ public:
 	bool contain(const char *key) const;
 	AnyType type(const char *key) const;
 
-	size_t size() const { return m_map.size(); }
+	size_t size() const { return _map.size(); }
 	size_t byteLength() const;
 
 private:
@@ -113,7 +113,7 @@ private:
 	void insert(const char *key, const AnyItem &item);
 
 private:
-	map_t m_map;
+	map_t _map;
 };
 
 }
