@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A00E3E3152DE49200ABB5B3 /* Channel.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A00E3E2152DE49200ABB5B3 /* Channel.h */; };
+		9A00E403152DFA8600ABB5B3 /* EndPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A00E402152DFA8600ABB5B3 /* EndPoint.h */; };
+		9A00E405152DFA9100ABB5B3 /* EndPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A00E404152DFA9100ABB5B3 /* EndPoint.cpp */; };
 		9A260532151CCEEB0097623B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A260531151CCEEB0097623B /* Foundation.framework */; };
 		9A26055D151CD6C20097623B /* MutexPosix.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A26055C151CD6C20097623B /* MutexPosix.h */; };
 		9A26055F151CD91D0097623B /* RWLockPosix.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A26055E151CD91D0097623B /* RWLockPosix.h */; };
@@ -17,6 +20,8 @@
 		9A3426411520DB5900C52AA4 /* BaseClientTest.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A3426401520DB5900C52AA4 /* BaseClientTest.1 */; };
 		9A3426451520DD0600C52AA4 /* libBaseClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A26052E151CCEEB0097623B /* libBaseClient.a */; };
 		9A3426491520E34300C52AA4 /* libpthread.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3426481520E34300C52AA4 /* libpthread.dylib */; };
+		9A6A98A3152DDEFD00E53878 /* UdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A6A98A2152DDEFD00E53878 /* UdpSocket.h */; };
+		9A6A98A6152DDF0F00E53878 /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6A98A5152DDF0F00E53878 /* UdpSocket.cpp */; };
 		9A6D4E4E151F8AC700999602 /* ThreadQueueImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A6D4E4D151F8AC700999602 /* ThreadQueueImpl.h */; };
 		9A6D4E50151F8E8700999602 /* ThreadQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A6D4E4F151F8E8700999602 /* ThreadQueue.h */; };
 		9A6D4E52151F902100999602 /* Event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A6D4E51151F902100999602 /* Event.cpp */; };
@@ -72,6 +77,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9A00E3E2152DE49200ABB5B3 /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Channel.h; sourceTree = "<group>"; };
+		9A00E402152DFA8600ABB5B3 /* EndPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EndPoint.h; sourceTree = "<group>"; };
+		9A00E404152DFA9100ABB5B3 /* EndPoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EndPoint.cpp; sourceTree = "<group>"; };
 		9A26052E151CCEEB0097623B /* libBaseClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBaseClient.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A260531151CCEEB0097623B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9A260535151CCEEB0097623B /* BaseClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BaseClient-Prefix.pch"; sourceTree = "<group>"; };
@@ -84,6 +92,8 @@
 		9A34263E1520DB5900C52AA4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		9A3426401520DB5900C52AA4 /* BaseClientTest.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = BaseClientTest.1; sourceTree = "<group>"; };
 		9A3426481520E34300C52AA4 /* libpthread.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpthread.dylib; path = SDKs/MacOSX10.7.sdk/usr/lib/libpthread.dylib; sourceTree = DEVELOPER_DIR; };
+		9A6A98A2152DDEFD00E53878 /* UdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UdpSocket.h; sourceTree = "<group>"; };
+		9A6A98A5152DDF0F00E53878 /* UdpSocket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UdpSocket.cpp; sourceTree = "<group>"; };
 		9A6D4E4D151F8AC700999602 /* ThreadQueueImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadQueueImpl.h; sourceTree = "<group>"; };
 		9A6D4E4F151F8E8700999602 /* ThreadQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadQueue.h; sourceTree = "<group>"; };
 		9A6D4E51151F902100999602 /* Event.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Event.cpp; sourceTree = "<group>"; };
@@ -214,6 +224,11 @@
 				9A6D4E57151F97CA00999602 /* Thread.cpp */,
 				9A6D4E4F151F8E8700999602 /* ThreadQueue.h */,
 				9A6D4E55151F912600999602 /* ThreadQueue.cpp */,
+				9A6A98A2152DDEFD00E53878 /* UdpSocket.h */,
+				9A6A98A5152DDF0F00E53878 /* UdpSocket.cpp */,
+				9A00E3E2152DE49200ABB5B3 /* Channel.h */,
+				9A00E402152DFA8600ABB5B3 /* EndPoint.h */,
+				9A00E404152DFA9100ABB5B3 /* EndPoint.cpp */,
 			);
 			name = common;
 			sourceTree = "<group>";
@@ -271,6 +286,9 @@
 				9A6D4E50151F8E8700999602 /* ThreadQueue.h in Headers */,
 				9A7AC44C1521F2EF006C927F /* Any.h in Headers */,
 				9A7AC44D1521F2EF006C927F /* SmartPtr.h in Headers */,
+				9A6A98A3152DDEFD00E53878 /* UdpSocket.h in Headers */,
+				9A00E3E3152DE49200ABB5B3 /* Channel.h in Headers */,
+				9A00E403152DFA8600ABB5B3 /* EndPoint.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +374,8 @@
 				9A3426311520D06200C52AA4 /* RWLock.cpp in Sources */,
 				9A3426331520D0C100C52AA4 /* SpinLock.cpp in Sources */,
 				9A7AC44B1521F2EF006C927F /* Any.cpp in Sources */,
+				9A6A98A6152DDF0F00E53878 /* UdpSocket.cpp in Sources */,
+				9A00E405152DFA9100ABB5B3 /* EndPoint.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,10 +412,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
-				);
-				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = (
-					"DEBUG=1",
-					"$(inherited)",
+					_POSIX_,
 					CLIENT_MAC,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
@@ -418,7 +435,10 @@
 				CONFIGURATION_TEMP_DIR = ../../build/release;
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = CLIENT_MAC;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					_POSIX_,
+					CLIENT_MAC,
+				);
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
